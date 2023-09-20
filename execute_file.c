@@ -12,7 +12,7 @@ void exec_push(const char *token, stack_t **stack, unsigned int line_number)
 	token = strtok(NULL, " ");
 	if (!token)
 	{
-		fprintf(stderr, "L%u: missing argument for push\n", line_number);
+		fprintf(stderr, "L%u: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 	value = atoi(token);

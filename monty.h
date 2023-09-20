@@ -41,7 +41,7 @@ void pall(stack_t **stack, unsigned int line_number);
 void pop(stack_t **stack, unsigned int line_number);
 void pint(stack_t **stack, unsigned int line_number);
 void push(stack_t **stack, int value);
-void exec_push(const char *token, stack_t **stack, unsigned int line_number)
+void exec_push(const char *token, stack_t **stack, unsigned int line_number);
 void exec_instractions(const char *token, stack_t **stack,
-
+		instruction_t instructions[], unsigned int line_number);
 #endif

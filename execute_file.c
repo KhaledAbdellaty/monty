@@ -82,7 +82,6 @@ void execute_monty_file(const char *file, instruction_t instructions[])
 			else
 			{
 				exec_instractions(token, &stack, instructions, line_number);
-				break;
 			}
 		}
 	}

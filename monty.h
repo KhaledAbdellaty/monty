@@ -46,4 +46,5 @@ void exec_instractions(const char *token, stack_t **stack,
 		instruction_t instructions[], unsigned int line_number);
 void swap(stack_t **stack, unsigned int line_number);
 void add(stack_t **stack, unsigned int line_number);
+void nop(stack_t **stack, unsigned int line_number);
 #endif

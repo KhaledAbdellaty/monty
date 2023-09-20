@@ -34,3 +34,13 @@ void add(stack_t **stack, unsigned int line_number)
 	(*stack)->next->n += (*stack)->n;
 	pop(stack, line_number);
 }
+/**
+ * nop - a function that doesn’t do anything.
+ * @stack: the stack.
+ * @line_number: the number of the line.
+ */
+void nop(stack_t **stack, unsigned int line_number)
+{
+	(void)stack;
+	(void)line_number;
+}

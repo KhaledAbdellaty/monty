@@ -44,4 +44,6 @@ void push(stack_t **stack, int value);
 void exec_push(const char *token, stack_t **stack, unsigned int line_number);
 void exec_instractions(const char *token, stack_t **stack,
 		instruction_t instructions[], unsigned int line_number);
+void swap(stack_t **stack, unsigned int line_number);
+void add(stack_t **stack, unsigned int line_number);
 #endif

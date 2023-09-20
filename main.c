@@ -13,6 +13,8 @@ int main(int argc, char *argv[])
 		{"pint", &pint},
 		{"pop", &pop},
 		{"pall", &pall},
+		{"swap", &swap},
+		{"add", &add},
 		{NULL, NULL}
 	};
 

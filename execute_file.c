@@ -4,6 +4,7 @@
  * @token: the token.
  * @stack: the stack.
  * @line_number: the line number.
+ * @line: the buffer.
  */
 void exec_push(const char *token, stack_t **stack,
 		unsigned int line_number, char *line)
@@ -27,6 +28,7 @@ void exec_push(const char *token, stack_t **stack,
  * @stack: the stack.
  * @instructions: the list of instruction_s struct.
  * @line_number: the line number.
+ * @line: the buffer.
  */
 void exec_instractions(const char *token, stack_t **stack,
 		instruction_t instructions[], unsigned int line_number,
@@ -66,8 +68,8 @@ void execute_monty_file(const char *file, instruction_t instructions[])
 	size_t line_size = 0;
 	unsigned int line_number = 0;
 	stack_t *stack = NULL;
-	fp = fopen(file, "r");
 
+	fp = fopen(file, "r");
 	if (!fp)
 	{
 		fprintf(stderr, "Error: Can't open file %s\n", file);

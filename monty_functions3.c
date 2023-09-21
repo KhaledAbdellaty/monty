@@ -40,6 +40,8 @@ void mod(stack_t **stack, unsigned int line_number)
 
 /**
  * comment - a function that treat this line as a comment.
+ * @stack: the stack.
+ * @line_number: the line number.
  */
 void comment(stack_t **stack, unsigned int line_number)
 {

@@ -5,7 +5,8 @@
  * @stack: the stack.
  * @line_number: the line number.
  */
-void exec_push(const char *token, stack_t **stack, unsigned int line_number)
+void exec_push(const char *token, stack_t **stack,
+		unsigned int line_number, char *line)
 {
 	int value;
 
@@ -13,6 +14,8 @@ void exec_push(const char *token, stack_t **stack, unsigned int line_number)
 	if (!token)
 	{
 		fprintf(stderr, "L%u: usage: push integer\n", line_number);
+		free(line);
+		fclose(fp);
 		exit(EXIT_FAILURE);
 	}
 	value = atoi(token);
@@ -26,7 +29,8 @@ void exec_push(const char *token, stack_t **stack, unsigned int line_number)
  * @line_number: the line number.
  */
 void exec_instractions(const char *token, stack_t **stack,
-		instruction_t instructions[], unsigned int line_number)
+		instruction_t instructions[], unsigned int line_number,
+		char *line)
 {
 	instruction_t *instruction = NULL;
 	int i = 0;
@@ -43,6 +47,8 @@ void exec_instractions(const char *token, stack_t **stack,
 	if (!instruction)
 	{
 		fprintf(stderr, "L%u: unknown instruction %s\n", line_number, token);
+		free(line);
+		fclose(fp);
 		exit(EXIT_FAILURE);
 	}
 	instruction->f(stack, line_number);
@@ -60,7 +66,7 @@ void execute_monty_file(const char *file, instruction_t instructions[])
 	size_t line_size = 0;
 	unsigned int line_number = 0;
 	stack_t *stack = NULL;
-	FILE *fp = fopen(file, "r");
+	fp = fopen(file, "r");
 
 	if (!fp)
 	{
@@ -77,11 +83,11 @@ void execute_monty_file(const char *file, instruction_t instructions[])
 		{
 			if (strcmp(token, "push") == 0)
 			{
-				exec_push(token, &stack, line_number);
+				exec_push(token, &stack, line_number, line);
 			}
 			else
 			{
-				exec_instractions(token, &stack, instructions, line_number);
+				exec_instractions(token, &stack, instructions, line_number, line);
 			}
 		}
 	}

@@ -38,3 +38,11 @@ void mod(stack_t **stack, unsigned int line_number)
 	pop(stack, line_number);
 }
 
+/**
+ * comment - a function that treat this line as a comment.
+ */
+void comment(stack_t **stack, unsigned int line_number)
+{
+	(void)stack;
+	(void)line_number;
+}

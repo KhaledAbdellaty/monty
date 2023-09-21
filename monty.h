@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-
+FILE *fp;
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -41,9 +41,11 @@ void pall(stack_t **stack, unsigned int line_number);
 void pop(stack_t **stack, unsigned int line_number);
 void pint(stack_t **stack, unsigned int line_number);
 void push(stack_t **stack, int value);
-void exec_push(const char *token, stack_t **stack, unsigned int line_number);
+void exec_push(const char *token, stack_t **stack,
+		unsigned int line_number, char *line);
 void exec_instractions(const char *token, stack_t **stack,
-		instruction_t instructions[], unsigned int line_number);
+		instruction_t instructions[], unsigned int line_number,
+		char *line);
 void swap(stack_t **stack, unsigned int line_number);
 void add(stack_t **stack, unsigned int line_number);
 void nop(stack_t **stack, unsigned int line_number);
@@ -51,4 +53,5 @@ void sub(stack_t **stack, unsigned int line_number);
 void divide(stack_t **stack, unsigned int line_number);
 void multi(stack_t **stack, unsigned int line_number);
 void mod(stack_t **stack, unsigned int line_number);
+void comment(stack_t **stack, unsigned int line_number);
 #endif

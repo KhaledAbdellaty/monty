@@ -20,6 +20,7 @@ int main(int argc, char *argv[])
 		{"div", &divide},
 		{"mul", &multi},
 		{"mod", &mod},
+		{"#", &comment},
 		{NULL, NULL}
 	};
 

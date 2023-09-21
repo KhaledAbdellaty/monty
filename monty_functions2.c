@@ -63,7 +63,7 @@ void sub(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * div - a function that divides the second top
+ * divide - a function that divides the second top
  * element of the stack by the top element of the stack.
  * @stack: the stack.
  * @line_number: the number of the line.

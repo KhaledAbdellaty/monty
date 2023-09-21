@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
 		{"add", &add},
 		{"nop", &nop},
 		{"sub", &sub},
-		{"div", &div},
+		{"div", &divide},
 		{NULL, NULL}
 	};
 

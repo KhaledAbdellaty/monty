@@ -68,7 +68,7 @@ void sub(stack_t **stack, unsigned int line_number)
  * @stack: the stack.
  * @line_number: the number of the line.
  */
-void div(stack_t **stack, unsigned int line_number)
+void divide(stack_t **stack, unsigned int line_number)
 {
 	if (!*stack || !(*stack)->next)
 	{
